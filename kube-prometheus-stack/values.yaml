@@ -765,8 +765,8 @@ alertmanager:
     ## Define which Nodes the Pods are scheduled on.
     ## ref: https://kubernetes.io/docs/user-guide/node-selection/
     ##
-    nodeSelector: 
-      app: monitor
+    # nodeSelector: 
+    #   app: monitor
 
     ## Define resources requests and limits for single Pods.
     ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
@@ -803,12 +803,12 @@ alertmanager:
 
     ## If specified, the pod's tolerations.
     ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
-    ##
-    tolerations: 
-    - key: "app"
-      operator: "Equal"
-      value: "monitor"
-      effect: "NoSchedule"
+    # ##
+    # tolerations: 
+    # - key: "app"
+    #   operator: "Equal"
+    #   value: "monitor"
+    #   effect: "NoSchedule"
 
     ## If specified, the pod's topology spread constraints.
     ## ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/
@@ -934,11 +934,11 @@ grafana:
   ##
   forceDeployDatasources: false
 
-  tolerations: 
-  - key: "app"
-    operator: "Equal"
-    value: "monitor"
-    effect: "NoSchedule"
+  # tolerations: 
+  # - key: "app"
+  #   operator: "Equal"
+  #   value: "monitor"
+  #   effect: "NoSchedule"
 
   ## ForceDeployDashboard Create dashboard configmap even if grafana deployment has been disabled
   ##
@@ -1130,8 +1130,8 @@ grafana:
   persistence:
     enabled: true
   
-  nodeSelector:
-    app: monitor
+  # nodeSelector:
+  #   app: monitor
 ## Flag to disable all the kubernetes component scrapers
 ##
 kubernetesServiceMonitors:
@@ -1914,11 +1914,11 @@ kubeStateMetrics:
 ## Configuration for kube-state-metrics subchart
 ##
 kube-state-metrics:
-  tolerations: 
-    - key: "app"
-      operator: "Equal"
-      value: "monitor"
-      effect: "NoSchedule"
+  # tolerations: 
+  #   - key: "app"
+  #     operator: "Equal"
+  #     value: "monitor"
+  #     effect: "NoSchedule"
   namespaceOverride: ""
   rbac:
     create: true
@@ -2270,18 +2270,18 @@ prometheusOperator:
       ## Define which Nodes the Pods are scheduled on.
       ## ref: https://kubernetes.io/docs/user-guide/node-selection/
       ##
-      nodeSelector:
-        app: monitor
+      # nodeSelector:
+      #   app: monitor
         
 
       ## Tolerations for use with node taints
       ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
       ##
-    tolerations: 
-    - key: "app"
-      operator: "Equal"
-      value: "monitor"
-      effect: "NoSchedule"
+    # tolerations: 
+    # - key: "app"
+    #   operator: "Equal"
+    #   value: "monitor"
+    #   effect: "NoSchedule"
 
       ## Assign custom affinity rules to the prometheus operator
       ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
@@ -2340,15 +2340,15 @@ prometheusOperator:
       #   argocd.argoproj.io/hook: PreSync
       #   argocd.argoproj.io/hook-delete-policy: HookSucceeded
       podAnnotations: {}
-      nodeSelector:
-        app: monitor
+      # nodeSelector:
+      #   app: monitor
       affinity: {}
 
-      tolerations: 
-      - key: "app"
-        operator: "Equal"
-        value: "monitor"
-        effect: "NoSchedule"
+      # tolerations: 
+      # - key: "app"
+      #   operator: "Equal"
+      #   value: "monitor"
+      #   effect: "NoSchedule"
 
       ## SecurityContext holds pod-level security attributes and common container settings.
       ## This defaults to non root user with uid 2000 and gid 2000. *v1.PodSecurityContext  false
@@ -2589,17 +2589,17 @@ prometheusOperator:
   ## Define which Nodes the Pods are scheduled on.
   ## ref: https://kubernetes.io/docs/user-guide/node-selection/
   ##
-  nodeSelector: 
-    app: monitor
+  # nodeSelector: 
+  #   app: monitor
 
   ## Tolerations for use with node taints
   ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
   ##
-  tolerations: 
-  - key: "app"
-    operator: "Equal"
-    value: "monitor"
-    effect: "NoSchedule"
+  # tolerations: 
+  # - key: "app"
+  #   operator: "Equal"
+  #   value: "monitor"
+  #   effect: "NoSchedule"
 
   ## Assign custom affinity rules to the prometheus operator
   ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
@@ -3261,11 +3261,11 @@ prometheus:
     ## Tolerations for use with node taints
     ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
     ##
-    tolerations: 
-    - key: "app"
-      operator: "Equal"
-      value: "monitor"
-      effect: "NoSchedule"
+    # tolerations: 
+    # - key: "app"
+    #   operator: "Equal"
+    #   value: "monitor"
+    #   effect: "NoSchedule"
 
     ## If specified, the pod's topology spread constraints.
     ## ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/
@@ -3324,8 +3324,8 @@ prometheus:
     ## Define which Nodes the Pods are scheduled on.
     ## ref: https://kubernetes.io/docs/user-guide/node-selection/
     ##
-    nodeSelector:
-      app: monitor
+    # nodeSelector:
+    #   app: monitor
 
     ## Secrets is a list of Secrets in the same namespace as the Prometheus object, which shall be mounted into the Prometheus Pods.
     ## The Secrets are mounted into /etc/prometheus/secrets/. Secrets changes after initial creation of a Prometheus object are not
@@ -4382,8 +4382,8 @@ thanosRuler:
     ## Define which Nodes the Pods are scheduled on.
     ## ref: https://kubernetes.io/docs/user-guide/node-selection/
     ##
-    nodeSelector: 
-      app: monitor
+    # nodeSelector: 
+    #   app: monitor
 
     ## Define resources requests and limits for single Pods.
     ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
@@ -4421,11 +4421,11 @@ thanosRuler:
     ## If specified, the pod's tolerations.
     ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
     ##
-    tolerations:
-    - key: "app"
-      operator: "Equal"
-      value: "monitor"
-      effect: "NoSchedule"
+    # tolerations:
+    # - key: "app"
+    #   operator: "Equal"
+    #   value: "monitor"
+    #   effect: "NoSchedule"
 
     ## If specified, the pod's topology spread constraints.
     ## ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/
